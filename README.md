@@ -1,3 +1,3 @@
-# Skills for Engineering with Precission
+# Skills for Engineering
 
-Agent skills for engineering with precission, following standards and best practices.
+Agent skills for engineering
