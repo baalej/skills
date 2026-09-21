@@ -39,7 +39,7 @@ Located in `principles/`:
 
 Step-by-step workflows for different types of work. Each playbook references principles to guide execution.
 
-Located in `playbooks/`:
+Located in `skills/astack-mode/playbooks/` — they ship with the `astack-mode` skill, so installing it brings them along:
 1. **Plan/Scope** — Plan a project in detail
 2. **Design/Architecture** — Design feature architecture
 3. **Build** — Build a feature from a design
@@ -147,8 +147,8 @@ Others can be added as needed.
 
 ## Getting started
 
-1. Learn the [11 principles](principles/) — skim them; you'll reference them during work
-2. Understand the [8 playbooks](playbooks/) — these are your workflows
+1. Learn the [11 principles](skills/) — skim them; you'll reference them during work
+2. Understand the [8 playbooks](skills/astack-mode/playbooks/) — these are your workflows
 3. Start with `/astack-mode` and your task
 
 That's it. The system guides you from there.

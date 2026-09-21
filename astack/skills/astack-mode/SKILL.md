@@ -12,39 +12,50 @@ Your personal engineering system for shipping high-quality code. Start here.
 Type `/astack-mode` with your task. This skill:
 
 1. **Matches your task to a playbook** (Plan, Design, Build, Fix, Refactor, Review, Learn, Perf)
-2. **Opens a todo list** with the playbook's steps
-3. **Routes to other skills** when a step needs depth
-4. **Stays active** (sticky mode) across turns
-5. **Guides execution** using your 11 principles
+2. **Reads that playbook file** from `playbooks/` — the table below maps playbook to file
+3. **Opens a todo list** with the playbook's steps
+4. **Routes to other skills** when a step needs depth
+5. **Stays active** (sticky mode) across turns
+6. **Guides execution** using your 11 principles
+
+Do not work from the summaries on this page. Once you've matched a playbook,
+read its file before starting — the steps and their verification criteria live
+there, not here.
 
 ## The playbooks
 
-| Playbook | Use when |
-|---|---|
-| **Plan/Scope** | Planning a feature end-to-end |
-| **Design** | Designing architecture before coding |
-| **Build** | Building a feature from a design |
-| **Fix** | Fixing a bug or issue |
-| **Refactor** | Improving code structure |
-| **Review** | Reviewing your own code |
-| **Learn** | Understanding existing code |
-| **Perf** | Optimizing performance |
+Paths are relative to this skill's directory.
+
+| Playbook | Use when | File |
+|---|---|---|
+| **Plan/Scope** | Planning a feature end-to-end | `playbooks/playbook-plan-scope.md` |
+| **Design** | Designing architecture before coding | `playbooks/playbook-design-architecture.md` |
+| **Build** | Building a feature from a design | `playbooks/playbook-build-feature.md` |
+| **Fix** | Fixing a bug or issue | `playbooks/playbook-fix-bug.md` |
+| **Refactor** | Improving code structure | `playbooks/playbook-refactor.md` |
+| **Review** | Reviewing your own code | `playbooks/playbook-code-review.md` |
+| **Learn** | Understanding existing code | `playbooks/playbook-learn-understand.md` |
+| **Perf** | Optimizing performance | `playbooks/playbook-performance.md` |
 
 ## The 11 principles
 
-Your system is built on 11 core principles that guide all work:
+Your system is built on 11 core principles that guide all work. Each is also a
+skill of its own — when a playbook step calls for depth on one, invoke it by
+name (e.g. `/root-causes-not-symptoms`) to get the full treatment.
 
-1. **Quality Over Speed** — Verify robustness; never ship unproven code
-2. **Code is Documentation** — Clear names, obvious structure, minimal comments
-3. **Plans Evolve; Principles Don't** — Pivot when needed, quality standards never change
-4. **Root Causes, Not Symptoms** — Fix the thing that's broken, not the symptom
-5. **Tech-Agnostic Approach** — Principles guide work; adapt recipes to your stack
-6. **Build the Lever** — Automate non-trivial work with scripts, codemods, generators
-7. **Encode Lessons in Structure** — Make rules automatic via types, lint, tests, schemas
-8. **Laziness Protocol** — Delete before adding; smallest change that solves the problem
-9. **Foundational Thinking** — Get data structures right first; logic follows
-10. **Exhaust the Design Space** — Build 2-3 competing prototypes before committing
-11. **Sequence Verifiable Units** — Break work into small, independent, reviewable pieces
+| Principle | In short | Skill |
+|---|---|---|
+| **Quality Over Speed** | Verify robustness; never ship unproven code | `quality-over-speed` |
+| **Code is Documentation** | Clear names, obvious structure, minimal comments | `code-is-documentation` |
+| **Plans Evolve; Principles Don't** | Pivot when needed, quality standards never change | `plans-evolve-principles-dont` |
+| **Root Causes, Not Symptoms** | Fix the thing that's broken, not the symptom | `root-causes-not-symptoms` |
+| **Tech-Agnostic Approach** | Principles guide work; adapt recipes to your stack | `tech-agnostic-approach` |
+| **Build the Lever** | Automate non-trivial work with scripts, codemods, generators | `build-the-lever` |
+| **Encode Lessons in Structure** | Make rules automatic via types, lint, tests, schemas | `encode-lessons-in-structure` |
+| **Laziness Protocol** | Delete before adding; smallest change that solves the problem | `laziness-protocol` |
+| **Foundational Thinking** | Get data structures right first; logic follows | `foundational-thinking` |
+| **Exhaust the Design Space** | Build 2-3 competing prototypes before committing | `exhaust-the-design-space` |
+| **Sequence Verifiable Units** | Break work into small, independent, reviewable pieces | `sequence-verifiable-units` |
 
 ## Examples
 
@@ -90,8 +101,9 @@ If you can't meet these, say so upfront. Don't ship compromised code.
 
 ## When to use other commands
 
-Most of the time, use `/astack-mode` and let it route. But you can invoke individual skills if you already know what you need:
-- `/unslop` — Remove AI patterns from writing
+Most of the time, use `/astack-mode` and let it route. But you can invoke any of
+the 11 principle skills directly if you already know what you need — see the
+table above for their names.
 
 ## Handoff structure
 
