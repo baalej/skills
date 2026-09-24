@@ -17,10 +17,10 @@ disable-model-invocation: true
 Before declaring work done, demonstrate that the code works as intended against the real artifact (run the feature, observe output, inspect the diff). The method of proof depends on your tech:
 
 - If you have a test framework available: automated tests that exercise the user's path.
-- If you have a UI: visually run it and confirm behavior.
+- If you have a UI: run it and observe it systematically — see `verify-by-eye`. A screenshot is not proof; it cannot show timing, interruption, or stutter.
 - If you have a CLI: run the commands and verify output.
 - If you have a library: call it as a user would and verify the result.
-- **Do not accept "it compiles" or "no errors" as proof.** Compilation silence is not correctness.
+- **Do not accept "it compiles" or "no errors" as proof.** Compilation silence is not correctness. For interfaces, "it renders" is the same claim wearing a different hat.
 
 ### 2. Code is its own documentation.
 

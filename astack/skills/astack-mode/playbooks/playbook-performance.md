@@ -57,6 +57,7 @@ type: playbook
   - Algorithm complexity (sorting when you could index)?
   - Resource contention (lock, I/O wait)?
   - External dependency (slow API call)?
+  - Rendering: does the motion animate properties that trigger paint or layout, or share a thread with the work? (`web-motion` → `references/performance.md`)
 - Principle: Root Causes, Not Symptoms
 
 **How to verify:**

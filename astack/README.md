@@ -18,7 +18,7 @@ That's it. `/astack-mode` will:
 
 ## What's in here
 
-### 11 Principles
+### 12 Principles
 
 Core values that guide all work. Tech-agnostic, tool-agnostic, model-agnostic.
 
@@ -34,8 +34,18 @@ Located in `principles/`:
 9. Foundational Thinking
 10. Exhaust the Design Space
 11. Sequence Verifiable Units
+12. Details Compound
 
-### 8 Playbooks
+### Depth skills
+
+Methods and recipe layers a playbook step routes into. Principles stay
+tech-agnostic; a depth skill is agnostic only where that costs nothing — when
+specificity is the point, it says so in its scope line.
+
+- **`web-motion`** — Building and reviewing web motion: tool ladder, compositor property tiers, exact curves and durations, gestures, interruption, reduced motion, the review bar
+- **`verify-by-eye`** — The proof method for interfaces: observation performed systematically, from using it as a user through to the fresh-eyes pass
+
+### 9 Playbooks
 
 Step-by-step workflows for different types of work. Each playbook references principles to guide execution.
 
@@ -48,6 +58,7 @@ Located in `skills/astack-mode/playbooks/` — they ship with the `astack-mode` 
 6. **Review** — Review your own code
 7. **Learn** — Understand existing code
 8. **Perf** — Optimize performance
+9. **Craft** — Make an interface feel right (build, debug, or audit)
 
 ### astack-mode
 
@@ -98,6 +109,7 @@ All code, always:
 - **Secure** — No vulnerabilities, validated at boundaries
 - **Correct** — Proofs exist (tests, runs, observations)
 - **Maintainable** — Clear names, obvious structure, readable
+- **Felt** — For anything a person looks at or touches: it responds, motion has a purpose, nothing jars
 
 These are non-negotiable. Don't ship code that fails these gates.
 
@@ -114,10 +126,18 @@ The principles are universal. The recipes adapt to your tech.
 Example: **"Prove it works"** translates to:
 - Compiled language → compiler catches type errors
 - Interpreted language → tests and linting
-- UI → visual testing and user flows
+- UI → observation, performed systematically (`verify-by-eye`)
 - Backend → integration tests
 
 The method changes; the requirement doesn't.
+
+The same split carries craft. *"Motion should start immediately and settle
+gently"* is a fact about where a user's attention goes, so it holds on web,
+iOS, and desktop alike — only the binding differs. The principle
+(`details-compound`) ships the decision and the budget; the depth skill
+(`web-motion`) ships the exact curves, and says on its first line that it is
+web-only. Add a sibling depth skill for another platform; don't fork the
+principle.
 
 ## Tech-agnostic, solo + collaboration
 
@@ -147,8 +167,8 @@ Others can be added as needed.
 
 ## Getting started
 
-1. Learn the [11 principles](skills/) — skim them; you'll reference them during work
-2. Understand the [8 playbooks](skills/astack-mode/playbooks/) — these are your workflows
+1. Learn the [12 principles](skills/) — skim them; you'll reference them during work
+2. Understand the [9 playbooks](skills/astack-mode/playbooks/) — these are your workflows
 3. Start with `/astack-mode` and your task
 
 That's it. The system guides you from there.

@@ -83,6 +83,7 @@ type: playbook
 - Test the feature end-to-end on the real artifact
 - Test the happy path, edge cases, error cases
 - Measure performance; confirm it meets the bar
+- If a person touches it: real hardware, real content, reduced motion, keyboard-only — then `verify-by-eye` for the full passes
 - Principle: Quality Over Speed, Prove It Works
 
 **How to verify:**

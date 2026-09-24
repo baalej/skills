@@ -15,7 +15,7 @@ type: playbook
 - Quality Over Speed (catch issues before shipping)
 - Code is Documentation (clarity, naming, comments)
 - Root Causes, Not Symptoms (don't accept surface-level fixes)
-- All 11 principles (this is your quality gate)
+- All 12 principles (this is your quality gate)
 
 ---
 
@@ -58,6 +58,7 @@ type: playbook
 - Test happy path, edge cases, error cases
 - Measure performance; confirm it meets spec
 - Observe real behavior; don't just trust tests
+- For interface changes, observation is the proof and it has a method: `verify-by-eye`
 - Principle: Quality Over Speed, Prove It Works
 
 **How to verify:**
@@ -70,12 +71,13 @@ type: playbook
 ## Step 4: Check Against Principles
 
 **What to do:**
-- Does the code follow your 11 principles?
+- Does the code follow your 12 principles?
 - Is this the root fix or a symptom patch? (Root Causes)
 - Could this be smaller? (Laziness)
 - Are data structures sound? (Foundational Thinking)
 - Is the implementation verifiable? (Sequence Verifiable Units)
-- Principle: All 11 principles are your quality gate
+- If the diff touches motion or anything a user sees: walk the Never Ship table and propose the earliest fix in the remedial order — deleting outranks fixing (`web-motion` → Reviewing motion)
+- Principle: All 12 principles are your quality gate
 
 **How to verify:**
 - Principle checklist passed

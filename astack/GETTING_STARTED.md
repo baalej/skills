@@ -6,7 +6,7 @@ This guide walks you through a real example: **Building a user authentication fe
 
 When you invoke `/astack-mode` with a task:
 
-1. **It matches to a playbook** (Plan, Design, Build, Fix, Refactor, Review, Learn, Perf)
+1. **It matches to a playbook** (Plan, Design, Build, Fix, Refactor, Review, Learn, Perf, Craft)
 2. **A todo list opens** with 6 steps
 3. **You follow each step**, using principles to guide decisions
 4. **At each step, you verify** the work is correct
