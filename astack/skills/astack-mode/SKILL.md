@@ -121,7 +121,7 @@ All code, always:
 - **Secure**: No vulnerabilities, validated at boundaries
 - **Correct**: Proofs exist (tests, runs, observations)
 - **Maintainable**: Clear names, obvious structure, readable by strangers
-- **Felt**: For anything a person looks at or touches — it responds, motion has a purpose, nothing jars, it degrades under reduced motion
+- **Felt**: For anything a person looks at or touches — it responds, any motion has a purpose, nothing jars, and motion respects reduced-motion preferences
 
 If you can't meet these, say so upfront. Don't ship compromised code.
 

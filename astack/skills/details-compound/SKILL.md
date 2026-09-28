@@ -12,6 +12,8 @@ disable-model-invocation: true
 
 **When to apply:** Anything a person looks at or touches—interfaces above all, but also CLI output, error messages, docs. During design and build, not only at the end.
 
+**Advice is not authorization.** An audit, inspection, or review may identify places where motion could help and describe how. It does not authorize adding or changing animation. Implement motion only when the user explicitly asks for it or a supplied design/spec calls for it. During other interface work, preserve the existing motion character and use immediate, non-animated feedback when that is enough.
+
 ## Why this is a principle and not a preference
 
 Most craft details are never consciously noticed. That is the point: a user who notices nothing proceeds without hesitating. The value is in the aggregate, so no single detail can justify itself under interrogation—"does anyone really care about the transform origin?" is unanswerable one detail at a time, and irrelevant. Craft is justified as a standard you hold, the way you hold correctness. You do not defend individual assertions in a test suite either.
@@ -34,11 +36,11 @@ This gate runs once per product, not once per element, and its answer constrains
 
 Motion costs the user attention and delays their next action. Spend it only when it buys something: **feedback** (the interface confirms it heard them), **spatial consistency** (a thing leaves the way it arrived, so their model of where it went stays true), **state indication**, **continuity** (preventing a jarring appearance), or **explanation**.
 
-"It looks cool" is valid only for things seen rarely. Repetition converts motion into latency—the first time a thing animates it informs, the hundredth time it is a toll. Never animate an action the user triggers from the keyboard; they are already moving faster than the animation.
+"It looks cool" can be valid for things seen rarely. Repetition can convert motion into latency—the first time a thing animates it informs, the hundredth time it may be a toll. Avoid motion on keyboard-triggered or frequent actions by default; treat that as guidance to discuss, not permission to override an explicit user or product decision.
 
-### 2. Responsiveness is not optional; motion is.
+### 2. Responsive feedback is required; motion is optional.
 
-Anything pressable must acknowledge the press immediately. That is closer to correctness than to polish—an element that does not react reads as broken. Motion is the part you can cut. Acknowledgement is not.
+Anything pressable should acknowledge the press immediately. That is closer to correctness than to polish—an element that does not react reads as broken. The acknowledgement can be instant, visual, or animated; animation is optional.
 
 ### 3. Decide agnostically, bind to the stack last.
 
@@ -46,11 +48,11 @@ Whether it moves, what it buys, how long it takes, where it originates, how it i
 
 ### 4. Taste that lives only in your head will regress.
 
-Once the project's motion character is settled, encode it: named tokens for curves and durations, a lint rule for the failure mode you keep fixing, a component that owns the press feedback so no caller can forget it. Otherwise the next contributor—or the next agent—resets it to defaults. Principle: Encode Lessons in Structure.
+If the project has an established motion character, encode the decisions the team wants to preserve: named tokens, a lint rule for a recurring failure, or a component that owns shared feedback. Do not add motion tokens or shared animations just because an audit suggested them. Principle: Encode Lessons in Structure.
 
-### 5. Reduced motion is correctness, not charity.
+### 5. Respect reduced-motion preferences.
 
-Honor the platform's reduced-motion setting. Reduced does not mean none: keep the transitions that carry meaning, drop the ones that move things through space.
+Honor the platform's reduced-motion setting. Reduce or remove animation as appropriate, while keeping state changes understandable through immediate feedback or other non-motion cues.
 
 ## Signals to watch for
 

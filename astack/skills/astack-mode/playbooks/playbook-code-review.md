@@ -76,7 +76,7 @@ type: playbook
 - Could this be smaller? (Laziness)
 - Are data structures sound? (Foundational Thinking)
 - Is the implementation verifiable? (Sequence Verifiable Units)
-- If the diff touches motion or anything a user sees: walk the Never Ship table and propose the earliest fix in the remedial order — deleting outranks fixing (`web-motion` → Reviewing motion)
+- If the diff touches motion, review for concrete usability, accessibility, correctness, or performance issues. You may suggest motion refinements, but don't treat style preferences as defects or change motion unless asked (`web-motion` → Reviewing motion)
 - Principle: All 12 principles are your quality gate
 
 **How to verify:**
