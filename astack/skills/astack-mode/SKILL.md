@@ -88,7 +88,7 @@ Stack-specific values live in the depth skills below, never in a principle.
 
 ## Depth skills
 
-Not principles — recipe layers and methods a playbook step routes into when it needs one.
+Not principles — recipe layers and methods, either routed into by a playbook step or invoked directly by name.
 
 | Skill | What it holds | Scope |
 |---|---|---|
@@ -98,6 +98,7 @@ Not principles — recipe layers and methods a playbook step routes into when it
 | `break-the-ui` | Stress a component with the plausible worst value for every field it renders, behind a dev-only toggle, then report defects separately from design decisions | Any stack |
 | `animation-vocabulary` | Reverse lookup from a described sensation to the precise term ("grows out of the button" → origin-aware animation). Names effects; recommends nothing | Naming, any stack |
 | `blast-radius` | What a change breaks past the diff: where grep stops, the one fact it's safe because of, and a five-rung evidence ladder you report your position on | Any stack |
+| `log-friction` | Review this session and append what chafed about astack to `FRICTION.md`. Invoked directly, never routed. Records complaints; changes nothing | astack itself |
 
 A depth skill declares its **Scope** on its first lines and is as specific as
 the job needs. Entries inside one are labeled **fact** (platform or perceptual

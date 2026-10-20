@@ -50,8 +50,8 @@ Core values that guide all work. Each is a skill of its own, in `skills/`:
 
 ### Depth skills
 
-Methods and recipe layers a playbook step routes into. This is where stack
-specificity belongs. A depth skill names its scope on its first line and is as
+Methods and recipe layers, either routed into by a playbook step or invoked
+directly by name. This is where stack specificity belongs. A depth skill names its scope on its first line and is as
 specific as the job needs.
 
 - **`web-motion`** — Building and reviewing web motion: tool ladder, compositor property tiers, exact curves and durations, gestures, interruption, reduced motion, the review bar
@@ -60,6 +60,7 @@ specific as the job needs.
 - **`break-the-ui`** — Stress a component with the plausible worst value for every field it renders, behind a dev-only toggle, then report defects separately from design decisions
 - **`animation-vocabulary`** — Reverse lookup from a described sensation to the precise term. Names effects; recommends nothing
 - **`blast-radius`** — What a change breaks past the diff: where grep stops, the one fact it's safe because of, and a five-rung evidence ladder you report your position on
+- **`log-friction`** — Review the session and append what chafed about astack to `FRICTION.md`. The one skill pointed at astack itself
 
 Entries inside a depth skill are labeled **fact** (platform or perceptual
 behavior you can verify by observing it), **default** (a sound starting value,
@@ -190,7 +191,7 @@ astack is built for solo work with collaboration support:
 
 ## What astack does not ship
 
-astack is deliberately small: 16 principles, 6 depth skills, and the
+astack is deliberately small: 16 principles, 7 depth skills, and the
 `astack-mode` orchestrator. It carries no prose-cleanup, PR-driving, or
 subagent-fleet skills. Install those alongside it if you want them; nothing in
 astack depends on them.

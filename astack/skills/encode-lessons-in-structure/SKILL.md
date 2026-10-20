@@ -66,3 +66,5 @@ Distinct from [Build the Lever](../build-the-lever/SKILL.md), which builds a too
 Preferred over [Code is Documentation](../code-is-documentation/SKILL.md) when a rule carries real cost if broken. Clarity relies on the reader, structure does not.
 
 The usual trigger is [Root Causes, Not Symptoms](../root-causes-not-symptoms/SKILL.md) finding a bug class rather than a bug: the root fix closes the instance, this closes the class.
+
+This principle points at your codebase. Pointed back at astack itself, it is [Log Friction](../log-friction/SKILL.md) — a step that keeps chafing is a lesson about the skill, not about the work.
