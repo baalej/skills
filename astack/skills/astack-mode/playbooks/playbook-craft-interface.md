@@ -18,9 +18,8 @@ behind it (use Design), or reviewing a diff before you ship (use Review — its
 step 4 routes into `web-motion`).
 
 **Principles:**
-- Details Compound (feel is a quality gate; the product gate runs before the element gate)
+- Details Compound (feel is a quality gate; the product gate runs before the element gate; decide in words first and bind to the stack last)
 - Laziness Protocol (the best motion decision is usually "none")
-- Tech-Agnostic Approach (decide agnostically, bind to the stack last)
 - Encode Lessons in Structure (taste that isn't encoded regresses)
 - Quality Over Speed (observation is the proof, and it isn't optional)
 
@@ -168,3 +167,12 @@ changing motion; the user can ask to implement a suggestion.
 - Any new motion convention is documented where someone will find it
 - Someone else could extend this interface, stay in character, and know what not
   to touch — without asking
+
+**Then run Handoff** (`playbooks/playbook-handoff.md`) for the decision log,
+evidence labels, and the reply. Unique to this playbook: the decision log's
+more valuable half is what deliberately does not move.
+
+**Reply:** Build mode — what moves, what deliberately does not and why, the
+tokens touched, what you observed when you used it. Audit and Debug modes stop
+at step 3: a prioritized list of candidates or a diagnosis, in plain language,
+with no implementation and no code.

@@ -15,7 +15,7 @@ type: playbook
 - Quality Over Speed (catch issues before shipping)
 - Code is Documentation (clarity, naming, comments)
 - Root Causes, Not Symptoms (don't accept surface-level fixes)
-- All 12 principles (this is your quality gate)
+- All 11 principles (this is your quality gate)
 
 ---
 
@@ -71,13 +71,13 @@ type: playbook
 ## Step 4: Check Against Principles
 
 **What to do:**
-- Does the code follow your 12 principles?
+- Does the code follow your 11 principles?
 - Is this the root fix or a symptom patch? (Root Causes)
 - Could this be smaller? (Laziness)
 - Are data structures sound? (Foundational Thinking)
 - Is the implementation verifiable? (Sequence Verifiable Units)
 - If the diff touches motion, review for concrete usability, accessibility, correctness, or performance issues. You may suggest motion refinements, but don't treat style preferences as defects or change motion unless asked (`web-motion` → Reviewing motion)
-- Principle: All 12 principles are your quality gate
+- Principle: All 11 principles are your quality gate
 
 **How to verify:**
 - Principle checklist passed
@@ -110,3 +110,12 @@ type: playbook
 **How to verify:**
 - Checklist signed off
 - Code ships only if passing all quality gates
+
+**Then run Handoff** (`playbooks/playbook-handoff.md`) for evidence labels and
+the reply. This playbook produces findings, not a commit, so the decision log
+reduces to the verdict and what you deliberately let pass.
+
+**Reply:** findings ordered by severity, each with the file and line and the
+gate it fails. What passes, stated explicitly. The ship-or-fix verdict. Say
+which findings you confirmed by running something and which are inferred from
+reading.

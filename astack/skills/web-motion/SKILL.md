@@ -1,6 +1,6 @@
 ---
 name: web-motion
-description: Web-specific values for building and reviewing motion—tool ladder, property tiers, exact curves and durations, gestures, interruption, reduced motion, and the review bar. The recipe layer under Details Compound.
+description: "Apply when writing or reviewing motion on the web. The recipe layer under details-compound: tool ladder, compositor property tiers, exact curves and durations, gestures, interruption, reduced motion, the review bar. Web only, by design."
 disable-model-invocation: true
 ---
 
@@ -12,7 +12,7 @@ Words like **never** and **always** below describe strong defaults for common UI
 
 **When to apply:** Writing or reviewing motion on the web. This is the recipe layer—`details-compound` decides *whether and why* something moves; this decides *what it's made of*.
 
-**Scope:** Web only. Explicitly not tech-agnostic, by design. The principle above it transfers between platforms; these values do not.
+**Scope:** Web only. This is the stack layer under an agnostic principle: the decision transfers between platforms, these values do not.
 
 ## Posture
 
@@ -310,3 +310,13 @@ Write the code. Then, in a few lines at most:
 - **What to feel-check** — if the result depends on feel you can't judge from code (a crossfade, a spring's bounce, the opacity/height balance in an entering list), say so and hand off to `verify-by-eye`.
 
 The code is the deliverable. Don't pad this into a report.
+
+---
+
+## Related
+
+The recipe layer under [Details Compound](../details-compound/SKILL.md), which owns the decision of whether anything should move at all. Run its product gate before reaching for anything here.
+
+Findings come from [Verify By Eye](../verify-by-eye/SKILL.md) — that skill establishes what you observed, this one says whether it is within budget.
+
+Web only, by design. This is the stack layer: the principle above it transfers between platforms, these values do not. Add a sibling depth skill for another platform rather than generalizing them.

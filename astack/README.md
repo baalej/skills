@@ -4,6 +4,16 @@ Your personal engineering system for shipping high-quality code across any tech 
 
 **Philosophy:** Quality over speed. Principles over recipes. Verification over assumptions.
 
+## Install
+
+As a plugin (Claude Code or Cursor), point your client at this directory —
+`plugin.json` and `.cursor-plugin/plugin.json` declare the bundle. Or install
+the skills directly:
+
+```bash
+npx skills@latest add baalej/skills/astack --agent claude-code --yes
+```
+
 ## Quick start
 
 ```
@@ -18,34 +28,33 @@ That's it. `/astack-mode` will:
 
 ## What's in here
 
-### 12 Principles
+### 13 Principles
 
-Core values that guide all work. Tech-agnostic, tool-agnostic, model-agnostic.
-
-Located in `principles/`:
+Core values that guide all work. Each is a skill of its own, in `skills/`:
 1. Quality Over Speed
 2. Code is Documentation
 3. Plans Evolve; Principles Don't
 4. Root Causes, Not Symptoms
-5. Tech-Agnostic Approach
-6. Build the Lever
-7. Encode Lessons in Structure
-8. Laziness Protocol
-9. Foundational Thinking
-10. Exhaust the Design Space
-11. Sequence Verifiable Units
-12. Details Compound
+5. Build the Lever
+6. Encode Lessons in Structure
+7. Laziness Protocol
+8. Foundational Thinking
+9. Exhaust the Design Space
+10. Sequence Verifiable Units
+11. Details Compound
+12. Test Behavior, Not Implementation
+13. Explain the Number
 
 ### Depth skills
 
-Methods and recipe layers a playbook step routes into. Principles stay
-tech-agnostic; a depth skill is agnostic only where that costs nothing — when
-specificity is the point, it says so in its scope line.
+Methods and recipe layers a playbook step routes into. This is where stack
+specificity belongs. A depth skill names its scope on its first line and is as
+specific as the job needs.
 
 - **`web-motion`** — Building and reviewing web motion: tool ladder, compositor property tiers, exact curves and durations, gestures, interruption, reduced motion, the review bar
 - **`verify-by-eye`** — The proof method for interfaces: observation performed systematically, from using it as a user through to the fresh-eyes pass
 
-### 9 Playbooks
+### 9 task playbooks
 
 Step-by-step workflows for different types of work. Each playbook references principles to guide execution.
 
@@ -60,11 +69,22 @@ Located in `skills/astack-mode/playbooks/` — they ship with the `astack-mode` 
 8. **Perf** — Optimize performance
 9. **Craft** — Make an interface feel right (build, debug, or audit)
 
+Plus two reserved playbooks that are never matched from a request directly:
+
+- **Figure It Out** — the fallback. When nothing above fits, or a narrower
+  playbook would cover only part of the task, this designs a bespoke one: frame
+  a falsifiable predicate, build the sequence riskiest-unknown-first, run each
+  unit as an experiment, keep a trail. Costs a design pass, so prefer a narrower
+  playbook whenever one genuinely fits.
+- **Handoff** — the terminal step every playbook runs last. It owns the decision
+  log, the evidence labels, and the reply, so the nine never duplicate that
+  structure.
+
 ### astack-mode
 
 The main entry point. A sticky mode that reads your task, matches it to a playbook, and orchestrates execution.
 
-Located in `astack-mode/SKILL.md`.
+Located in `skills/astack-mode/SKILL.md`.
 
 ## How it works
 
@@ -113,17 +133,25 @@ All code, always:
 
 These are non-negotiable. Don't ship code that fails these gates.
 
-## Principles, not recipes
+## Two layers: principles and stack
 
-astack works across any tech stack:
-- Languages: JavaScript, Python, Go, Rust, etc.
-- Frameworks: React, Django, Express, etc.
-- Platforms: Web, CLI, mobile, backend, etc.
-- LLMs: Claude, GPT, Copilot, etc.
+astack has a top layer and a bottom layer, and the split is the whole design.
 
-The principles are universal. The recipes adapt to your tech.
+**Principles are written to hold anywhere.** Not because portability is a goal
+in itself — because a statement that only holds in one language is usually a
+recipe wearing a principle's clothes. "Fix root causes" survives translation
+into Python, PHP, Go, and TypeScript, which is evidence it says something real.
+"Use TypeScript for type safety" does not survive it, so it belongs one layer
+down. The agnosticism is a side effect of writing principles that are actually
+principles. It is not a rule you follow, and nothing in astack asks you to keep
+your own work portable.
 
-Example: **"Prove it works"** translates to:
+**Stack specificity lives in the depth skills**, and it should be as concrete as
+the work demands — exact curves, exact syntax, exact tooling. A depth skill
+names its scope on its first line and doesn't apologize for being narrow.
+`web-motion` is web-only and says so.
+
+Example of the split: **"Prove it works"** translates to:
 - Compiled language → compiler catches type errors
 - Interpreted language → tests and linting
 - UI → observation, performed systematically (`verify-by-eye`)
@@ -132,26 +160,43 @@ Example: **"Prove it works"** translates to:
 The method changes; the requirement doesn't.
 
 The same split carries craft. *"Motion should start immediately and settle
-gently"* is a fact about where a user's attention goes, so it holds on web,
-iOS, and desktop alike — only the binding differs. The principle
+gently"* is a fact about where a user's attention goes, so it holds on web, iOS,
+and desktop alike — only the binding differs. The principle
 (`details-compound`) ships the decision and the budget; the depth skill
-(`web-motion`) ships the exact curves, and says on its first line that it is
-web-only. Add a sibling depth skill for another platform; don't fork the
-principle.
+(`web-motion`) ships the exact curves. To cover another platform, add a sibling
+depth skill beside it rather than widening the principle.
 
-## Tech-agnostic, solo + collaboration
+## Solo, with handoff
 
 astack is built for solo work with collaboration support:
 - **Solo:** You're the single decision maker
-- **Handoff:** Each playbook ends with a handoff step that documents everything so others can pick it up
+- **Handoff:** Every playbook ends by running the shared Handoff playbook, which documents decisions, assumptions, tradeoffs and cuts so others can pick it up
 - **Collaboration:** Comment on decisions, add context, hand off mid-stream
 
-## Other skills
+## What astack does not ship
 
-astack ships with:
-- **`/unslop`** — Remove AI patterns from writing (already in repo)
+astack is deliberately small: 13 principles, 2 depth skills, and the
+`astack-mode` orchestrator. It carries no prose-cleanup, PR-driving, or
+subagent-fleet skills. Install those alongside it if you want them; nothing in
+astack depends on them.
 
-Others can be added as needed.
+## Maintaining astack
+
+The bundle checks itself:
+
+```bash
+node astack/scripts/check-bundle.mjs
+```
+
+It verifies frontmatter and name/directory agreement, that every description
+opens with its trigger, that each principle carries a `## Related` section, that
+no relative link is dead, that `astack-mode`'s tables match what is on disk,
+that every playbook declares a `**Reply:**` contract and routes to Handoff, that
+no playbook lists the same principle twice, and that every count claimed in a
+README or manifest is true.
+
+Each rule is there because the convention was broken by hand at least once. Run
+it after editing anything in `skills/`.
 
 ## Philosophy
 
@@ -163,12 +208,12 @@ Others can be added as needed.
 
 **Plans evolve; principles don't.** Expect to change direction. The quality standards stay fixed.
 
-**Tech-agnostic.** Works everywhere. Translate principles into your language, framework, platform.
+**Specific where it counts.** Principles stay general because that is what makes them principles. Depth skills get as concrete as the stack requires.
 
 ## Getting started
 
-1. Learn the [12 principles](skills/) — skim them; you'll reference them during work
-2. Understand the [9 playbooks](skills/astack-mode/playbooks/) — these are your workflows
+1. Learn the [13 principles](skills/) — skim them; you'll reference them during work
+2. Understand the [9 task playbooks](skills/astack-mode/playbooks/) — these are your workflows
 3. Start with `/astack-mode` and your task
 
 That's it. The system guides you from there.
@@ -177,11 +222,23 @@ That's it. The system guides you from there.
 
 Most engineering advice is either vague ("write good code") or too specific ("use TypeScript"). astack bridges that gap:
 
-- **Principles** are universal and tech-agnostic
-- **Playbooks** are concrete workflows that reference principles
+- **Principles** are general enough to survive translation into any stack
+- **Depth skills** are as specific as the stack requires
+- **Playbooks** are concrete workflows that route between the two
 - **astack-mode** is the orchestrator that brings them together
 
 You get guidance without dogma. Flexibility without chaos.
+
+## Credits
+
+Several of astack's conventions were worked out by studying
+[pstack](https://github.com/cursor/plugins/tree/main/pstack) by Lauren Tan
+(MIT): trigger-first skill descriptions, cross-linked sibling principles, a
+shared terminal playbook with per-playbook reply contracts, explicit evidence
+labels, and a committed validator for the bundle's own conventions.
+`test-behavior-not-implementation`, `explain-the-number` and the Figure It Out
+fallback cover engineering ideas that pstack states well; the text here is
+astack's own.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: details-compound
-description: How it feels is part of whether it works. Craft is a quality gate, not a finishing pass.
+description: "Apply to anything a person looks at or touches, during design and build rather than at the end: interfaces above all, but also CLI output, error messages, docs. How it feels is the fifth quality gate. Feel means responsive, not animated."
 disable-model-invocation: true
 ---
 
@@ -44,7 +44,7 @@ Anything pressable should acknowledge the press immediately. That is closer to c
 
 ### 3. Decide agnostically, bind to the stack last.
 
-Whether it moves, what it buys, how long it takes, where it originates, how it interrupts and exits—these are facts about human perception and transfer between platforms. The syntax does not. Do not copy values from another stack without re-deriving whether the decision behind them applies to yours. Principle: Tech-Agnostic Approach.
+Whether it moves, what it buys, how long it takes, where it originates, how it interrupts and exits—these are facts about human perception and transfer between platforms. The syntax does not. Do not copy values from another stack without re-deriving whether the decision behind them applies to yours.
 
 ### 4. Taste that lives only in your head will regress.
 
@@ -70,3 +70,13 @@ Honor the platform's reduced-motion setting. Reduce or remove animation as appro
 - **Defaults as decisions**: Shipping whatever the framework does because nobody chose otherwise. A default is a decision you did not make.
 - **Craft without a budget**: Polishing the rare path while the hot path still jars. Spend attention where frequency is highest, then where stakes are.
 - **Taste by assertion**: "This feels off" with no follow-up. Name the property and the moment, or keep observing.
+
+---
+
+## Related
+
+The proof method for this gate is [Verify By Eye](../verify-by-eye/SKILL.md) — this principle decides *whether and why* something should feel a certain way, that skill establishes whether it does.
+
+On the web, [Web Motion](../web-motion/SKILL.md) is the recipe layer underneath: this principle ships the decision and the budget, that skill ships the exact curves. It is web-only by design; add a sibling for another platform rather than forking this principle.
+
+Held in tension with [Laziness Protocol](../laziness-protocol/SKILL.md), which usually wins. The best motion decision is most often "none"; this gate asks for responsiveness, not animation.

@@ -1,6 +1,6 @@
 ---
 name: code-is-documentation
-description: Write code so clear it needs no comments. Precise names, obvious structure, minimal comments.
+description: "Apply when writing any code, reviewing it, or refactoring. Write code a stranger understands in five minutes without comments: precise names, obvious structure. A comment earns its place only for a why the code cannot show."
 disable-model-invocation: true
 ---
 
@@ -53,3 +53,11 @@ disable-model-invocation: true
 - **Over-abbreviation**: Saving keystrokes at the cost of clarity. (`authUser` vs. `authorizedUser`—be explicit.)
 - **Poor abstraction**: Moving code to another file but using a vague name like `utils.js` or `helpers.ts`.
 - **Over-scattering logic**: Related code lives in five places; the reader has to hunt.
+
+---
+
+## Related
+
+Where a rule is worth more than clarity, [Encode Lessons in Structure](../encode-lessons-in-structure/SKILL.md) takes over: a precise name asks the next reader to cooperate, a type stops them. Prefer the type when the rule matters.
+
+[Foundational Thinking](../foundational-thinking/SKILL.md) supplies most of the clarity this principle asks for. Code over a sound data structure reads clearly without effort; no amount of naming rescues code built over a wrong one.
