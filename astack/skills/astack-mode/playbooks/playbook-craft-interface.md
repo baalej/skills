@@ -142,6 +142,10 @@ changing motion; the user can ask to implement a suggestion.
   (`/verify-by-eye`)
 - Check reduced motion, touch vs. pointer, keyboard-only, and relevant content
   states for the implemented interaction
+- On a touch target, check the platform behaviors too — feedback on press
+  rather than release, sticky hover, tap highlight, gesture axes
+  (`/mobile-web`). These read as "cheap" and are not motion problems, so
+  `web-motion` will not catch them
 - Use deeper passes (slow playback, real hardware, fresh-eyes review) when the
   implementation's complexity or impact warrants them
 

@@ -53,6 +53,15 @@ specific as the job needs.
 
 - **`web-motion`** — Building and reviewing web motion: tool ladder, compositor property tiers, exact curves and durations, gestures, interruption, reduced motion, the review bar
 - **`verify-by-eye`** — The proof method for interfaces: observation performed systematically, from using it as a user through to the fresh-eyes pass
+- **`mobile-web`** — The platform behaviors under a web app on a phone: viewport units, safe areas, tap highlight, `touch-action`, sticky hover, input zoom, overscroll, status bar. Symptom table first
+- **`break-the-ui`** — Stress a component with the plausible worst value for every field it renders, behind a dev-only toggle, then report defects separately from design decisions
+
+Entries inside a depth skill are labeled **fact** (platform or perceptual
+behavior you can verify by observing it), **default** (a sound starting value,
+adjust for the product), or **taste** (one house style among several). The
+labels exist so a depth skill reads as reference rather than as a rulebook —
+experimental work is free to depart from any default with a reason, and the
+label tells you which things are departures and which are just wrong.
 
 ### 9 task playbooks
 
@@ -175,7 +184,7 @@ astack is built for solo work with collaboration support:
 
 ## What astack does not ship
 
-astack is deliberately small: 13 principles, 2 depth skills, and the
+astack is deliberately small: 13 principles, 4 depth skills, and the
 `astack-mode` orchestrator. It carries no prose-cleanup, PR-driving, or
 subagent-fleet skills. Install those alongside it if you want them; nothing in
 astack depends on them.
@@ -239,6 +248,15 @@ labels, and a committed validator for the bundle's own conventions.
 `test-behavior-not-implementation`, `explain-the-number` and the Figure It Out
 fallback cover engineering ideas that pstack states well; the text here is
 astack's own.
+
+The motion and interface craft owes a direct debt to
+[Emil Kowalski](https://emilkowal.ski)'s
+[skills for designers and engineers](https://github.com/emilkowalski/skills)
+(MIT) and to animations.dev: `web-motion`, `mobile-web` and `break-the-ui`
+cover ground his skills map out, and a handful of lines in `web-motion` are his
+wording. His versions are stricter by design — a review bar where approval is
+earned. astack keeps the substance and softens the verdicts, because exact
+curves and durations are defaults here, not findings.
 
 ---
 

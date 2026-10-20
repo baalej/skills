@@ -7,7 +7,7 @@ they don't depend on each other.
 
 | Bundle | Skills | What it is |
 |---|---|---|
-| `astack` | 16 | Engineering system: 9 task playbooks + a fallback + a shared Handoff + 13 principles + 2 depth skills, entry point `/astack-mode` |
+| `astack` | 18 | Engineering system: 9 task playbooks + a fallback + a shared Handoff + 13 principles + 4 depth skills, entry point `/astack-mode` |
 | `pstack` | 50 | Larger principle and workflow set |
 | `kirby-cms` | 1 | Kirby CMS 5 domain reference |
 
@@ -16,7 +16,7 @@ they don't depend on each other.
 Name the bundle as a path segment. That installs every skill in it, and nothing
 from the other bundles.
 
-Install `astack` (all 16 skills) for `claude-code`:
+Install `astack` (all 18 skills) for `claude-code`:
 
 ```
 npx skills@latest add baalej/skills/astack --agent claude-code --yes

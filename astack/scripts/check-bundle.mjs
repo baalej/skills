@@ -14,8 +14,11 @@ const SKILLS = path.join(ROOT, "skills");
 const MODE = path.join(SKILLS, "astack-mode", "SKILL.md");
 const PLAYBOOKS = path.join(SKILLS, "astack-mode", "playbooks");
 const ENTRY = "astack-mode";
-const DEPTH = new Set(["web-motion", "verify-by-eye"]);
 const TERMINAL_PLAYBOOK = "playbook-handoff.md";
+// A depth skill declares its scope; a principle does not. That is the stated
+// convention, so derive the split from the files instead of hardcoding a list
+// that has to be edited every time a depth skill is added.
+const declaresScope = (text) => /^\*\*Scope:\*\*/m.test(text);
 
 const failures = [];
 const fail = (where, msg) => failures.push(`${where}: ${msg}`);
@@ -45,6 +48,12 @@ function frontmatter(text) {
 
 // --- 1. Skill frontmatter and conventions -----------------------------------
 const skillDirs = lsDirs(SKILLS).sort();
+const skillText = new Map(
+	skillDirs
+		.filter((d) => fs.existsSync(path.join(SKILLS, d, "SKILL.md")))
+		.map((d) => [d, read(path.join(SKILLS, d, "SKILL.md"))]),
+);
+const DEPTH = new Set(skillDirs.filter((d) => d !== ENTRY && declaresScope(skillText.get(d) ?? "")));
 const principles = skillDirs.filter((d) => d !== ENTRY && !DEPTH.has(d));
 
 for (const dir of skillDirs) {
@@ -111,6 +120,7 @@ const RESERVED = new Set([TERMINAL_PLAYBOOK, "playbook-figure-it-out.md"]);
 const taskPlaybooks = playbookFiles.filter((f) => !RESERVED.has(f));
 
 const COUNTED = [
+	[/(\d+)\s+depth skills?/gi, DEPTH.size, "depth skills"],
 	[/(\d+)\s+(?:core\s+)?principles?/gi, principles.length, "principles"],
 	[/(\d+)\s+skills?\b/gi, skillDirs.length, "skills"],
 	[/(\d+)\s+task playbooks?/gi, taskPlaybooks.length, "task playbooks"],
@@ -121,6 +131,8 @@ const CLAIM_FILES = [
 	path.resolve(ROOT, "..", "README.md"),
 	path.join(ROOT, "plugin.json"),
 	path.join(ROOT, ".cursor-plugin", "plugin.json"),
+	// Playbooks state counts too, and were missed by a hand pass once.
+	...fs.readdirSync(PLAYBOOKS).filter((f) => f.endsWith(".md")).map((f) => path.join(PLAYBOOKS, f)),
 ];
 for (const file of CLAIM_FILES) {
 	if (!fs.existsSync(file)) continue;

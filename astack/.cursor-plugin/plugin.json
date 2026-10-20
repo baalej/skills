@@ -2,7 +2,7 @@
 	"name": "astack",
 	"displayName": "astack",
 	"version": "0.1.0",
-	"description": "Quality over speed. Principles over recipes. Verification over assumptions. An engineering system: 9 task playbooks, 13 principles, 2 depth skills, entry point /astack-mode.",
+	"description": "Quality over speed. Principles over recipes. Verification over assumptions. An engineering system: 9 task playbooks, 13 principles, 4 depth skills, entry point /astack-mode.",
 	"author": {
 		"name": "baalej"
 	},

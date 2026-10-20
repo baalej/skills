@@ -90,6 +90,15 @@ Not principles — recipe layers and methods a playbook step routes into when it
 |---|---|---|
 | `web-motion` | Building and reviewing web motion: tool ladder, property tiers, exact curves and durations, gestures, interruption, reduced motion, the review bar. Plus `references/performance.md` — the compositor/paint/layout tier list. Plus `references/recipes.md` — worked technique implementations. | Web only, by design |
 | `verify-by-eye` | The proof method for interfaces: use it, slow it down, step the frames, real hardware, degradation passes, fresh eyes | Any stack |
+| `mobile-web` | The platform behaviors under a web app on a phone: viewport units, safe areas, tap highlight, `touch-action`, sticky hover, input zoom, overscroll, status bar. Symptom table first. | Mobile web, by design |
+| `break-the-ui` | Stress a component with the plausible worst value for every field it renders, behind a dev-only toggle, then report defects separately from design decisions | Any stack |
+
+A depth skill declares its **Scope** on its first lines and is as specific as
+the job needs. Entries inside one are labeled **fact** (platform or perceptual
+behavior you can verify by observing it), **default** (a sound starting value,
+adjust for the product), or **taste** (one house style among several). Treat a
+default as a default: these skills are not a rulebook, and an experiment is
+free to depart from any of them with a reason.
 
 ## Examples
 

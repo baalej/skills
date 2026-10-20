@@ -15,7 +15,7 @@ type: playbook
 - Quality Over Speed (catch issues before shipping)
 - Code is Documentation (clarity, naming, comments)
 - Root Causes, Not Symptoms (don't accept surface-level fixes)
-- All 11 principles (this is your quality gate)
+- All 13 principles (this is your quality gate)
 
 ---
 
@@ -71,13 +71,17 @@ type: playbook
 ## Step 4: Check Against Principles
 
 **What to do:**
-- Does the code follow your 11 principles?
+- Does the code follow your 13 principles?
+- If the diff renders data you don't control, has it been seen with realistic
+  worst-case data and not just fixtures? (`/break-the-ui`)
+- If it will be used on a phone, has it been opened on a real device?
+  (`/mobile-web`)
 - Is this the root fix or a symptom patch? (Root Causes)
 - Could this be smaller? (Laziness)
 - Are data structures sound? (Foundational Thinking)
 - Is the implementation verifiable? (Sequence Verifiable Units)
 - If the diff touches motion, review for concrete usability, accessibility, correctness, or performance issues. You may suggest motion refinements, but don't treat style preferences as defects or change motion unless asked (`web-motion` → Reviewing motion)
-- Principle: All 11 principles are your quality gate
+- Principle: All 13 principles are your quality gate
 
 **How to verify:**
 - Principle checklist passed
