@@ -77,6 +77,8 @@ Honor the platform's reduced-motion setting. Reduce or remove animation as appro
 
 The proof method for this gate is [Verify By Eye](../verify-by-eye/SKILL.md) — this principle decides *whether and why* something should feel a certain way, that skill establishes whether it does.
 
+To put a name to an effect before deciding on it, [Animation Vocabulary](../animation-vocabulary/SKILL.md) is the reverse lookup. Naming it is not an argument for using it.
+
 On the web, [Web Motion](../web-motion/SKILL.md) is the recipe layer underneath: this principle ships the decision and the budget, that skill ships the exact curves. It is web-only by design; add a sibling for another platform rather than forking this principle.
 
 Held in tension with [Laziness Protocol](../laziness-protocol/SKILL.md), which usually wins. The best motion decision is most often "none"; this gate asks for responsiveness, not animation.

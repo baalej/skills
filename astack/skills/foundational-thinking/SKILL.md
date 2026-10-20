@@ -69,6 +69,8 @@ disable-model-invocation: true
 
 ## Related
 
+Says the structure comes first; [Model the Domain](../model-the-domain/SKILL.md) says which structure to reach for. Run them together.
+
 Runs before [Exhaust the Design Space](../exhaust-the-design-space/SKILL.md): name the data shape first, then compare designs over it.
 
 Does most of the work that [Code is Documentation](../code-is-documentation/SKILL.md) asks for. A sound structure reads clearly on its own.

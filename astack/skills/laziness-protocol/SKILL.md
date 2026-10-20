@@ -62,6 +62,8 @@ disable-model-invocation: true
 
 Bounds [Build the Lever](../build-the-lever/SKILL.md) (smallest script, never a framework) and [Exhaust the Design Space](../exhaust-the-design-space/SKILL.md) (prototypes are throwaway probes, and if the answer is already obvious there is nothing to explore).
 
+Bounds [Model the Domain](../model-the-domain/SKILL.md): the smallest structure that removes the branches, never a framework. An abstraction that adds indirection without deleting anything has failed both principles.
+
 Usually wins against [Details Compound](../details-compound/SKILL.md). The best motion decision is most often none at all.
 
 Does not override [Quality Over Speed](../quality-over-speed/SKILL.md). This principle cuts scope and code, never proof. "Smallest change" never means "unverified change".

@@ -28,7 +28,7 @@ That's it. `/astack-mode` will:
 
 ## What's in here
 
-### 13 Principles
+### 16 Principles
 
 Core values that guide all work. Each is a skill of its own, in `skills/`:
 1. Quality Over Speed
@@ -44,6 +44,9 @@ Core values that guide all work. Each is a skill of its own, in `skills/`:
 11. Details Compound
 12. Test Behavior, Not Implementation
 13. Explain the Number
+14. Model the Domain
+15. Minimize Reader Load
+16. Attack the Premise
 
 ### Depth skills
 
@@ -55,6 +58,7 @@ specific as the job needs.
 - **`verify-by-eye`** — The proof method for interfaces: observation performed systematically, from using it as a user through to the fresh-eyes pass
 - **`mobile-web`** — The platform behaviors under a web app on a phone: viewport units, safe areas, tap highlight, `touch-action`, sticky hover, input zoom, overscroll, status bar. Symptom table first
 - **`break-the-ui`** — Stress a component with the plausible worst value for every field it renders, behind a dev-only toggle, then report defects separately from design decisions
+- **`animation-vocabulary`** — Reverse lookup from a described sensation to the precise term. Names effects; recommends nothing
 
 Entries inside a depth skill are labeled **fact** (platform or perceptual
 behavior you can verify by observing it), **default** (a sound starting value,
@@ -185,7 +189,7 @@ astack is built for solo work with collaboration support:
 
 ## What astack does not ship
 
-astack is deliberately small: 13 principles, 4 depth skills, and the
+astack is deliberately small: 16 principles, 5 depth skills, and the
 `astack-mode` orchestrator. It carries no prose-cleanup, PR-driving, or
 subagent-fleet skills. Install those alongside it if you want them; nothing in
 astack depends on them.
@@ -222,7 +226,7 @@ it after editing anything in `skills/`.
 
 ## Getting started
 
-1. Learn the [13 principles](skills/) — skim them; you'll reference them during work
+1. Learn the [16 principles](skills/) — skim them; you'll reference them during work
 2. Understand the [10 task playbooks](skills/astack-mode/playbooks/) — these are your workflows
 3. Start with `/astack-mode` and your task
 
@@ -246,18 +250,21 @@ Several of astack's conventions were worked out by studying
 (MIT): trigger-first skill descriptions, cross-linked sibling principles, a
 shared terminal playbook with per-playbook reply contracts, explicit evidence
 labels, and a committed validator for the bundle's own conventions.
-`test-behavior-not-implementation`, `explain-the-number` and the Figure It Out
-fallback cover engineering ideas that pstack states well; the text here is
-astack's own.
+`test-behavior-not-implementation`, `explain-the-number`, `model-the-domain`,
+`minimize-reader-load`, `attack-the-premise` and the Figure It Out fallback
+cover engineering ideas that pstack states well; the text here is astack's own.
 
 The motion and interface craft owes a direct debt to
 [Emil Kowalski](https://emilkowal.ski)'s
 [skills for designers and engineers](https://github.com/emilkowalski/skills)
-(MIT) and to animations.dev: `web-motion`, `mobile-web` and `break-the-ui`
-cover ground his skills map out, and a handful of lines in `web-motion` are his
-wording. His versions are stricter by design — a review bar where approval is
-earned. astack keeps the substance and softens the verdicts, because exact
-curves and durations are defaults here, not findings.
+(MIT) and to animations.dev: `web-motion`, `mobile-web`, `break-the-ui` and
+`animation-vocabulary` cover ground his skills map out, and a handful of lines
+in `web-motion` are his wording. His versions are stricter by design — a review
+bar where approval is earned. astack keeps the substance and softens the
+verdicts, because exact curves and durations are defaults here, not findings.
+
+The Prototype playbook draws on both: pstack's throwaway-sketch discipline and
+the divergence rule and switcher contract from Emil's prototype skill.
 
 ---
 

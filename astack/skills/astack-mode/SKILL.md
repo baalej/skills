@@ -1,6 +1,6 @@
 ---
 name: astack-mode
-description: "Entry point for astack. Apply on /astack-mode, or when a task needs a playbook: planning, design, build, bug fix, refactor, review, learning a codebase, performance, or interface craft. Matches the task to a playbook, then orchestrates the run against the 13 principles."
+description: "Entry point for astack. Apply on /astack-mode, or when a task needs a playbook: planning, design, build, bug fix, refactor, review, learning a codebase, performance, or interface craft. Matches the task to a playbook, then orchestrates the run against the 16 principles."
 ---
 
 # astack-mode
@@ -16,7 +16,7 @@ Type `/astack-mode` with your task. This skill:
 3. **Opens a todo list** with the playbook's steps
 4. **Routes to other skills** when a step needs depth
 5. **Stays active** (sticky mode) across turns
-6. **Guides execution** using your 13 principles
+6. **Guides execution** using your 16 principles
 
 Do not work from the summaries on this page. Once you've matched a playbook,
 read its file before starting — the steps and their verification criteria live
@@ -56,9 +56,9 @@ fits, since this one costs a design pass first.
 labels, and the reply, so each playbook's own final step carries only what is
 unique to it. Handoff is never matched from a user request directly.
 
-## The 13 principles
+## The 16 principles
 
-Your system is built on 13 core principles that guide all work. Each is also a
+Your system is built on 16 core principles that guide all work. Each is also a
 skill of its own — when a playbook step calls for depth on one, invoke it by
 name (e.g. `/root-causes-not-symptoms`) to get the full treatment.
 
@@ -82,6 +82,9 @@ Stack-specific values live in the depth skills below, never in a principle.
 | **Details Compound** | How it feels is part of whether it works | `details-compound` |
 | **Test Behavior, Not Implementation** | Assert what users observe; a test that can't fail is decoration | `test-behavior-not-implementation` |
 | **Explain the Number** | Name what limits a measurement before you trust or report it | `explain-the-number` |
+| **Model the Domain** | Encode the domain in a structure; don't scatter it across conditionals | `model-the-domain` |
+| **Minimize Reader Load** | Count layers to trace and state to hold; cut whichever you overspent | `minimize-reader-load` |
+| **Attack the Premise** | Two fixes failed the same check: test the shared assumption, don't write a third | `attack-the-premise` |
 
 ## Depth skills
 
@@ -93,6 +96,7 @@ Not principles — recipe layers and methods a playbook step routes into when it
 | `verify-by-eye` | The proof method for interfaces: use it, slow it down, step the frames, real hardware, degradation passes, fresh eyes | Any stack |
 | `mobile-web` | The platform behaviors under a web app on a phone: viewport units, safe areas, tap highlight, `touch-action`, sticky hover, input zoom, overscroll, status bar. Symptom table first. | Mobile web, by design |
 | `break-the-ui` | Stress a component with the plausible worst value for every field it renders, behind a dev-only toggle, then report defects separately from design decisions | Any stack |
+| `animation-vocabulary` | Reverse lookup from a described sensation to the precise term ("grows out of the button" → origin-aware animation). Names effects; recommends nothing | Naming, any stack |
 
 A depth skill declares its **Scope** on its first lines and is as specific as
 the job needs. Entries inside one are labeled **fact** (platform or perceptual
@@ -229,7 +233,7 @@ these patterns.
 ## When to use other commands
 
 Most of the time, use `/astack-mode` and let it route. But you can invoke any of
-the 13 principle skills directly if you already know what you need — see the
+the 16 principle skills directly if you already know what you need — see the
 table above for their names.
 
 ## Handoff

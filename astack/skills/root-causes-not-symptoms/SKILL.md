@@ -61,6 +61,8 @@ disable-model-invocation: true
 
 ## Related
 
+When two fixes have already failed the same check, stop tracing and switch to [Attack the Premise](../attack-the-premise/SKILL.md) — at that point the shared assumption is the better suspect.
+
 Once the root is a bug *class* rather than a single bug, hand off to [Encode Lessons in Structure](../encode-lessons-in-structure/SKILL.md): the root fix closes the instance, the guardrail closes the class.
 
 The true root is often the data shape. [Foundational Thinking](../foundational-thinking/SKILL.md) names what a correct structure looks like.

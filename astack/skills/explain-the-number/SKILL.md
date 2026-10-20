@@ -53,6 +53,6 @@ Supplies the labels in astack-mode's **Evidence** section with their teeth. A nu
 
 Distinct from [Root Causes, Not Symptoms](../root-causes-not-symptoms/SKILL.md), which traces a fault to its origin. This traces a *number* to its cause — and the two meet when an optimization "works" for a reason you never identified, which means it can stop working for a reason you will not predict.
 
-When the limiter is a structure rather than a resource, see [Foundational Thinking](../foundational-thinking/SKILL.md). The most common true limiter is a data shape that forces the wrong access pattern, and no amount of tuning moves it.
+When the limiter is a structure rather than a resource, see [Foundational Thinking](../foundational-thinking/SKILL.md) and [Model the Domain](../model-the-domain/SKILL.md). The most common true limiter is a data shape that forces the wrong access pattern, and no amount of tuning moves it.
 
 Make the measurement rerunnable rather than hand-timed, per [Build the Lever](../build-the-lever/SKILL.md). A number a reviewer can reproduce beats a number they have to believe.

@@ -60,4 +60,6 @@ disable-model-invocation: true
 
 Where a rule is worth more than clarity, [Encode Lessons in Structure](../encode-lessons-in-structure/SKILL.md) takes over: a precise name asks the next reader to cooperate, a type stops them. Prefer the type when the rule matters.
 
+Paired with [Minimize Reader Load](../minimize-reader-load/SKILL.md), which measures what this principle asks for: naming and local clarity here, layers and hidden state there. A perfectly named one-caller wrapper is still a layer to step through.
+
 [Foundational Thinking](../foundational-thinking/SKILL.md) supplies most of the clarity this principle asks for. Code over a sound data structure reads clearly without effort; no amount of naming rescues code built over a wrong one.
