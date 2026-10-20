@@ -74,4 +74,4 @@ Held in tension with [Laziness Protocol](../laziness-protocol/SKILL.md). Two or 
 
 Runs after [Foundational Thinking](../foundational-thinking/SKILL.md) has named the data shape: competing designs are compared over the same structure, or they are not comparable.
 
-A prototype settles any question whose answer is observable by running something. See the empirical-fork rule in [astack-mode](../astack-mode/SKILL.md) — that class of question is not the human's to answer.
+Discharged by the **Prototype** playbook (`astack-mode/playbooks/playbook-prototype.md`), which is where competing sketches actually get built, compared and thrown away. A question whose answer is observable by running something goes there rather than to the human, per the empirical-fork rule in [astack-mode](../astack-mode/SKILL.md).

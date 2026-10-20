@@ -41,6 +41,7 @@ Paths are relative to this skill's directory.
 | **Learn** | Understanding existing code | `playbooks/playbook-learn-understand.md` |
 | **Perf** | Optimizing performance | `playbooks/playbook-performance.md` |
 | **Craft** | Making an interface feel right — build, debug, or audit motion | `playbooks/playbook-craft-interface.md` |
+| **Prototype** | Settling a design or empirical question with throwaway variants | `playbooks/playbook-prototype.md` |
 
 **Fallback.** When the task matches none of the rows above, or a narrower
 playbook would cover only part of it (a migration across many call sites, an
@@ -138,6 +139,12 @@ free to depart from any of them with a reason.
 → No single playbook covers it → Figure It Out designs one, with a committed
 decision trail
 
+```
+/astack-mode not sure if this list should be one column or two; mock it up
+```
+→ Opens the Prototype playbook — throwaway variants behind a switcher, the
+observation decides
+
 ## The workflow
 
 1. **Invoke** `/astack-mode` with your task
@@ -191,9 +198,10 @@ another person. Approval for one of these never carries to the next.
 **The empirical fork.** Before asking "which approach?", "how should I?", or
 "what should this do?", classify the question. If the answer is a fact you could
 observe by running something — behavior, timing, layout, output, a measurement —
-it is not the human's to answer. Sketch it and let the result decide, per
-[Exhaust the Design Space](../exhaust-the-design-space/SKILL.md). Reserve the
-question for a genuine product or preference call that no experiment can settle.
+it is not the human's to answer. Sketch it and let the result decide — run the
+**Prototype** playbook (`playbooks/playbook-prototype.md`), which exists for
+exactly this. Reserve the question for a genuine product or preference call that
+no experiment can settle.
 
 Read-only work is the exception: on a Learn or an Audit run, answer from the
 evidence rather than building a sketch.

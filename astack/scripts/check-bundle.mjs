@@ -96,6 +96,26 @@ for (const file of walk(ROOT)) {
 	}
 }
 
+// --- 2b. Stray CJK characters -----------------------------------------------
+// A mistyped word once landed as a CJK glyph mid-sentence, which is invisible in
+// a diff and still renders. CJK is legitimate inside code spans and fenced
+// blocks (break-the-ui uses a CJK name as worst-case data), so check prose only.
+const CJK = /[\u3000-\u303f\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uff00-\uffef]/;
+for (const file of walk(ROOT)) {
+	const lines = read(file).split("\n");
+	let inFence = false;
+	for (let i = 0; i < lines.length; i++) {
+		if (/^\s*```/.test(lines[i])) {
+			inFence = !inFence;
+			continue;
+		}
+		if (inFence) continue;
+		const prose = lines[i].replace(/`[^`]*`/g, "");
+		const m = CJK.exec(prose);
+		if (m) fail(path.relative(ROOT, file), `stray CJK character "${m[0]}" in prose on line ${i + 1}`);
+	}
+}
+
 // --- 3. astack-mode tables match what is on disk ---------------------------
 const modeText = read(MODE);
 const tableNames = new Set();

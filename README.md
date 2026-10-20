@@ -7,7 +7,7 @@ they don't depend on each other.
 
 | Bundle | Skills | What it is |
 |---|---|---|
-| `astack` | 18 | Engineering system: 9 task playbooks + a fallback + a shared Handoff + 13 principles + 4 depth skills, entry point `/astack-mode` |
+| `astack` | 18 | Engineering system: 10 task playbooks + a fallback + a shared Handoff + 13 principles + 4 depth skills, entry point `/astack-mode` |
 | `kirby-cms` | 1 | Kirby CMS 5 domain reference |
 
 ## 1. Installation

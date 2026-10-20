@@ -63,7 +63,7 @@ labels exist so a depth skill reads as reference rather than as a rulebook —
 experimental work is free to depart from any default with a reason, and the
 label tells you which things are departures and which are just wrong.
 
-### 9 task playbooks
+### 10 task playbooks
 
 Step-by-step workflows for different types of work. Each playbook references principles to guide execution.
 
@@ -77,6 +77,7 @@ Located in `skills/astack-mode/playbooks/` — they ship with the `astack-mode` 
 7. **Learn** — Understand existing code
 8. **Perf** — Optimize performance
 9. **Craft** — Make an interface feel right (build, debug, or audit)
+10. **Prototype** — Settle a design or empirical question with throwaway variants
 
 Plus two reserved playbooks that are never matched from a request directly:
 
@@ -222,7 +223,7 @@ it after editing anything in `skills/`.
 ## Getting started
 
 1. Learn the [13 principles](skills/) — skim them; you'll reference them during work
-2. Understand the [9 task playbooks](skills/astack-mode/playbooks/) — these are your workflows
+2. Understand the [10 task playbooks](skills/astack-mode/playbooks/) — these are your workflows
 3. Start with `/astack-mode` and your task
 
 That's it. The system guides you from there.
