@@ -46,7 +46,9 @@ up-front line, a skill is discovered at step 4 or never.
 
 Say plainly when a step's skill turned out not to apply, rather than dropping it
 silently. And any skill can be asked for by name at any point, whether or not a
-playbook routes to it — the tables below are the full set.
+playbook routes to it — the tables below are the full set. For an answer on
+demand rather than in flight, `astack-help` reads these tables and says what
+fits a given problem.
 
 ## The playbooks
 
@@ -121,6 +123,7 @@ Not principles — recipe layers and methods, either routed into by a playbook s
 | `animation-vocabulary` | Reverse lookup from a described sensation to the precise term ("grows out of the button" → origin-aware animation). Names effects; recommends nothing | Naming, any stack |
 | `blast-radius` | What a change breaks past the diff: where grep stops, the one fact it's safe because of, and a five-rung evidence ladder you report your position on | Any stack |
 | `log-friction` | Review this session and append what chafed about astack to `FRICTION.md`. Invoked directly, never routed. Records complaints; changes nothing | astack itself |
+| `astack-help` | What's available and what fits a given problem, answered from the skills on disk. Read-only; it points, it never starts the work | astack itself |
 
 A depth skill declares its **Scope** on its first lines and is as specific as
 the job needs. Entries inside one are labeled **fact** (platform or perceptual

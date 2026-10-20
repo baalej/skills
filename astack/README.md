@@ -22,9 +22,21 @@ npx skills@latest add baalej/skills/astack --agent claude-code --yes
 
 That's it. `/astack-mode` will:
 - Match your task to a playbook
+- Announce the match and which skills that playbook will route into
 - Open a todo list with steps
 - Guide you through each step using principles
-- Route to skills as needed
+- Name each skill again at the step that needs it
+
+Not sure what exists, or what fits a problem?
+
+```
+/astack-help what should I use for a slow endpoint
+```
+
+Only `/astack-mode` ever starts on its own. Every principle and depth skill is
+invoked — by a playbook step, or by you naming it — so nothing fires
+unexpectedly. `/astack-mode` tells you the menu as it goes and `/astack-help`
+answers on demand.
 
 ## What's in here
 
@@ -61,6 +73,7 @@ specific as the job needs.
 - **`animation-vocabulary`** — Reverse lookup from a described sensation to the precise term. Names effects; recommends nothing
 - **`blast-radius`** — What a change breaks past the diff: where grep stops, the one fact it's safe because of, and a five-rung evidence ladder you report your position on
 - **`log-friction`** — Review the session and append what chafed about astack to `FRICTION.md`. The one skill pointed at astack itself
+- **`astack-help`** — What's available and what fits a given problem, answered from the skills on disk so it can't go stale
 
 Entries inside a depth skill are labeled **fact** (platform or perceptual
 behavior you can verify by observing it), **default** (a sound starting value,
@@ -191,7 +204,7 @@ astack is built for solo work with collaboration support:
 
 ## What astack does not ship
 
-astack is deliberately small: 16 principles, 7 depth skills, and the
+astack is deliberately small: 16 principles, 8 depth skills, and the
 `astack-mode` orchestrator. It carries no prose-cleanup, PR-driving, or
 subagent-fleet skills. Install those alongside it if you want them; nothing in
 astack depends on them.

@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "astack",
   "version": "0.1.0",
-  "description": "Quality over speed. Principles over recipes. Verification over assumptions. An engineering system: 10 task playbooks, 16 principles, 7 depth skills, entry point /astack-mode.",
+  "description": "Quality over speed. Principles over recipes. Verification over assumptions. An engineering system: 10 task playbooks, 16 principles, 8 depth skills, entry point /astack-mode.",
   "author": {
     "name": "baalej"
   },

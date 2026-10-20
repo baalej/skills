@@ -153,6 +153,9 @@ const CLAIM_FILES = [
 	path.join(ROOT, ".cursor-plugin", "plugin.json"),
 	// Playbooks state counts too, and were missed by a hand pass once.
 	...fs.readdirSync(PLAYBOOKS).filter((f) => f.endsWith(".md")).map((f) => path.join(PLAYBOOKS, f)),
+	// And any skill may state one. astack-help shipped with a stale depth count
+	// because this list was a hand-picked few rather than everything.
+	...walk(SKILLS),
 ];
 for (const file of CLAIM_FILES) {
 	if (!fs.existsSync(file)) continue;
