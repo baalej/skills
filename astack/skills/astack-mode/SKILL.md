@@ -11,12 +11,18 @@ Your personal engineering system for shipping high-quality code. Start here.
 
 Type `/astack-mode` with your task. This skill:
 
-1. **Matches your task to a playbook** (Plan, Design, Build, Fix, Refactor, Review, Learn, Perf, Craft)
+1. **Matches your task to a playbook** (Plan, Design, Build, Fix, Refactor, Review, Learn, Perf, Craft, Prototype)
 2. **Reads that playbook file** from `playbooks/` — the table below maps playbook to file
-3. **Opens a todo list** with the playbook's steps
-4. **Routes to other skills** when a step needs depth
-5. **Stays active** (sticky mode) across turns
-6. **Guides execution** using your 16 principles
+3. **Announces the match and the skills it will route into**, before step 1
+4. **Opens a todo list** with the playbook's steps
+5. **Routes to those skills** at the step that needs each one, naming it again there
+6. **Stays active** (sticky mode) across turns
+7. **Guides execution** using your 16 principles
+
+**This skill is the only one that fires on its own.** Every principle and depth
+skill is explicitly invoked — by a playbook step, or by the user naming it. That
+keeps astack predictable, and it puts the burden on this skill to say what is
+available, which is what step 3 is for.
 
 Do not work from the summaries on this page. Once you've matched a playbook,
 read its file before starting — the steps and their verification criteria live
@@ -25,6 +31,22 @@ there, not here.
 **Announce the match before working.** State which playbook you matched and, if
 it has modes, which one you read the request as — in one line, before step 1.
 A wrong match costs one word to correct now and three steps to discover later.
+
+**Name what it will route into, in the same breath.** After reading the
+playbook, list the principles and depth skills its steps reach for. One line,
+before step 1:
+
+> **Matched: Build a Feature.** It routes into `foundational-thinking`,
+> `model-the-domain`, `break-the-ui` and `verify-by-eye` — each at its step.
+
+This exists because nothing here fires on its own except this skill. The user
+cannot ask for a skill they don't know is there, so the playbook states its menu
+up front and then names each skill again at the step that needs it. Without the
+up-front line, a skill is discovered at step 4 or never.
+
+Say plainly when a step's skill turned out not to apply, rather than dropping it
+silently. And any skill can be asked for by name at any point, whether or not a
+playbook routes to it — the tables below are the full set.
 
 ## The playbooks
 
