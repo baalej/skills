@@ -2,13 +2,12 @@
 
 Agent skills for engineering.
 
-This repo holds three independent bundles. Install whichever a project needs —
+This repo holds two independent bundles. Install whichever a project needs —
 they don't depend on each other.
 
 | Bundle | Skills | What it is |
 |---|---|---|
 | `astack` | 18 | Engineering system: 9 task playbooks + a fallback + a shared Handoff + 13 principles + 4 depth skills, entry point `/astack-mode` |
-| `pstack` | 50 | Larger principle and workflow set |
 | `kirby-cms` | 1 | Kirby CMS 5 domain reference |
 
 ## 1. Installation
@@ -49,8 +48,8 @@ npx skills@latest add baalej/skills/astack --list
 ```
 
 > Omitting the bundle segment (`add baalej/skills`) only finds `kirby-cms` —
-> the installer stops at the first directory depth that yields results, and the
-> other bundles nest one level deeper. Add `--full-depth` to scan everything.
+> the installer stops at the first directory depth that yields results, and
+> `astack` nests one level deeper. Add `--full-depth` to scan everything.
 
 ## 2. Update
 
