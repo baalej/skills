@@ -51,4 +51,6 @@ For interfaces, the proof method is [Verify By Eye](../verify-by-eye/SKILL.md). 
 
 [Sequence Verifiable Units](../sequence-verifiable-units/SKILL.md) is how this scales past a single change: proof per unit, not one audit at the end.
 
+For whether a change breaks something it doesn't touch, [Blast Radius](../blast-radius/SKILL.md) grades the proof on five rungs, where "you said so" is the bottom one.
+
 Not overridden by [Laziness Protocol](../laziness-protocol/SKILL.md). That one cuts scope, not verification.

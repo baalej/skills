@@ -74,6 +74,9 @@ type: playbook
 - Does the code follow your 16 principles?
 - If the diff renders data you don't control, has it been seen with realistic
   worst-case data and not just fixtures? (`/break-the-ui`)
+- If its effects reach past the diff — shared code, a data shape, a wire format,
+  callers you didn't read — what breaks elsewhere, and is the one fact it's safe
+  because of actually proven? (`/blast-radius`)
 - If it will be used on a phone, has it been opened on a real device?
   (`/mobile-web`)
 - Is this the root fix or a symptom patch? (Root Causes)

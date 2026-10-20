@@ -59,6 +59,7 @@ specific as the job needs.
 - **`mobile-web`** — The platform behaviors under a web app on a phone: viewport units, safe areas, tap highlight, `touch-action`, sticky hover, input zoom, overscroll, status bar. Symptom table first
 - **`break-the-ui`** — Stress a component with the plausible worst value for every field it renders, behind a dev-only toggle, then report defects separately from design decisions
 - **`animation-vocabulary`** — Reverse lookup from a described sensation to the precise term. Names effects; recommends nothing
+- **`blast-radius`** — What a change breaks past the diff: where grep stops, the one fact it's safe because of, and a five-rung evidence ladder you report your position on
 
 Entries inside a depth skill are labeled **fact** (platform or perceptual
 behavior you can verify by observing it), **default** (a sound starting value,
@@ -189,7 +190,7 @@ astack is built for solo work with collaboration support:
 
 ## What astack does not ship
 
-astack is deliberately small: 16 principles, 5 depth skills, and the
+astack is deliberately small: 16 principles, 6 depth skills, and the
 `astack-mode` orchestrator. It carries no prose-cleanup, PR-driving, or
 subagent-fleet skills. Install those alongside it if you want them; nothing in
 astack depends on them.
@@ -251,8 +252,9 @@ Several of astack's conventions were worked out by studying
 shared terminal playbook with per-playbook reply contracts, explicit evidence
 labels, and a committed validator for the bundle's own conventions.
 `test-behavior-not-implementation`, `explain-the-number`, `model-the-domain`,
-`minimize-reader-load`, `attack-the-premise` and the Figure It Out fallback
-cover engineering ideas that pstack states well; the text here is astack's own.
+`minimize-reader-load`, `attack-the-premise`, `blast-radius` and the Figure It
+Out fallback cover engineering ideas that pstack states well; the text here is
+astack's own.
 
 The motion and interface craft owes a direct debt to
 [Emil Kowalski](https://emilkowal.ski)'s

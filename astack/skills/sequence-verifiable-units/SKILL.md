@@ -72,4 +72,6 @@ A pivot re-cuts the remaining units without invalidating the verified ones. See 
 
 Canonical case: the failing repro lands before the fix in history. See [Root Causes, Not Symptoms](../root-causes-not-symptoms/SKILL.md).
 
+When a unit's check is "nothing else broke", that claim needs [Blast Radius](../blast-radius/SKILL.md) rather than a paragraph asserting it.
+
 When the units are many and similar, stop hand-applying them and build a [lever](../build-the-lever/SKILL.md) that does every unit in one pass.
